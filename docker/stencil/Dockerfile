@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --omit=dev
 
 # Bundle app source
-COPY . .
+COPY app/ /usr/src/app/
 
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+CMD [ "node", "server.mjs" ]
