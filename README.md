@@ -6,7 +6,7 @@ We have been making open-source PCR machines for decade. 1st generation thermal 
 
 We are fundraising at [experiment.com](https://experiment.com/projects/xyvmvuiwjhvyutlayrhn/).
 
-## Stencil
+## Stencil Data Generator
 
 [dNinja Stencil Generator](https://dninja-stencil.hisa.dev)
 - [Dockerfile](https://github.com/hisashin/dNinja/tree/main/docker/stencil)
