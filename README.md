@@ -9,6 +9,11 @@ We are fundraising at [experiment.com](https://experiment.com/projects/xyvmvuiwj
 ## Stencil Data Generator
 
 [dNinja Stencil Generator](https://dninja-stencil.hisa.dev)
+You can run this generator inside your own PC once you installed [Docker](https://www.docker.com/).
+```
+docker run --name dninja-stencil -p 8080:8080 -d hisashin/dninja-stencil:latest
+```
+Then open [http://localhost:8080](http://localhost:8080) in any browser.
 - [Dockerfile](https://github.com/hisashin/dNinja/tree/main/docker/stencil)
 - [Docker Hub](https://hub.docker.com/repository/docker/hisashin/dninja-stencil/general)
 
