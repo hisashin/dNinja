@@ -6,6 +6,12 @@ We have been making open-source PCR machines for decade. 1st generation thermal 
 
 We are fundraising at [experiment.com](https://experiment.com/projects/xyvmvuiwjhvyutlayrhn/).
 
+## Stencil
+
+[dNinja Stencil Generator](https://dninja-stencil.hisa.dev)
+- [Dockerfile](https://github.com/hisashin/dNinja/tree/main/docker/stencil)
+- [Docker Hub](https://hub.docker.com/repository/docker/hisashin/dninja-stencil/general)
+
 ## Deep learning droplet tracker
 
 [Install Python and Anaconda](https://test-jupyter.readthedocs.io/en/latest/install.html) then move to jupyter directory
