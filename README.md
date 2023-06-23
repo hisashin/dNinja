@@ -10,7 +10,7 @@ We are fundraising at [experiment.com](https://experiment.com/projects/xyvmvuiwj
 
 [dNinja Stencil Generator](https://dninja-stencil.hisa.dev)
 
-You can run this generator inside your own PC once you installed [Docker](https://www.docker.com/) by running this.
+You can run this generator inside your own PC once you installed [Docker](https://www.docker.com/) by this command.
 ```
 docker run --name dninja-stencil -p 8080:8080 -d hisashin/dninja-stencil:latest
 ```
