@@ -1,0 +1,88 @@
+<html>
+<head>
+  <title>dNinja stencil generator</title>
+</head>
+<body>
+<a href="https://experiment.com/projects/developing-dninja-an-open-source-digital-pcr/" target="_blank">dNinja</a> stencil generator<br>
+<a href="/images/layout.png" target="_blank"><img src="/images/layout.png" width="500"/></a><br>
+<form action="./download" method="get">
+  <table border="1">
+    <tr>
+      <th>Nuber of holes</th>
+      <td>
+        <input type="number" name="hx" value="5" />
+        x
+        <input type="number" name="hy" value="5" />
+      </td>
+      <td>
+        At least 20,000 holes are needed for production. 142x142=20164 or more.
+      </td>
+    </tr>
+    <tr>
+      <th>Diameter of hole (mil)</th>
+      <td>
+        <input type="number" name="d" step="0.01" value="100" />
+      </td>
+      <td>
+        1 mil is best for production.
+      </td>
+    </tr>
+    <tr>
+      <th>Distance between holes (mil)</th>
+      <td>
+        <input type="number" name="b" step="0.01" value="150" />
+      </td>
+      <td>
+        Smaller is better. What's your best?
+      </td>
+    </tr>
+    <tr>
+      <th>Square hole</th>
+      <td>
+        <input type="checkbox" name="sq" value="center" checked/>center<br>
+        <input type="checkbox" name="sq" value="corner" checked/>corner<br>
+        <input type="checkbox" name="sq" value="all" />all
+      </td>
+      <td>
+        Change the shape of the hole from a circle to a square to make it easier to be detected.
+      </td>
+    </tr>
+    <tr>
+      <th>Rotate Center Square</th>
+      <td>
+        <input type="checkbox" name="rc" value="true" checked/>
+      </td>
+      <td>
+        Rotate the center square 45 degrees to distinguish it from the corner squares.
+      </td>
+    </tr>
+    <tr>
+      <th>Stencil Dimension (mm)</th>
+      <td>
+        <input type="number" name="dx" step="0.01" value="50" />
+        x
+        <input type="number" name="dy" step="0.01" value="50" />
+      </td>
+      <td>
+        Size of stencil.
+      </td>
+    </tr>
+    <tr>
+      <th>Output format</th>
+      <td>
+        <input type="radio" name="format" value="kicad" /> KiCad
+        <input type="radio" name="format" value="gerber" /> Gerber (Not supported yet)
+      </td>
+      <td>
+        Download KiCad file or gerber directly.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input type="submit" value="Generate" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
