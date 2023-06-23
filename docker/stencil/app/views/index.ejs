@@ -8,7 +8,7 @@
   <table border="1">
     <tr>
       <th>Nuber of holes</th>
-      <td>
+      <td width="500">
         <input type="number" name="hx" value="5" />
         x
         <input type="number" name="hy" value="5" />
@@ -69,8 +69,29 @@
     <tr>
       <th>Output format</th>
       <td>
-        <input type="radio" name="format" value="kicad" checked/> KiCad
-        <input type="radio" name="format" value="gerber" /> Gerber (Not supported yet)
+        <input type="radio" name="format" value="kicad"/> KiCad<br>
+        <input type="radio" name="format" value="gerber" checked/> Gerber<br>
+&nbsp;
+<input type="checkbox" name="layers" value="F.Cu" />F.Cu
+<input type="checkbox" name="layers" value="B.Cu" />B.Cu
+<input type="checkbox" name="layers" value="B.Adhesive" />B.Adhesive
+<input type="checkbox" name="layers" value="F.Adhesive" />F.Adhesive
+<input type="checkbox" name="layers" value="B.Paste" />B.Paste
+<input type="checkbox" name="layers" value="F.Paste" checked/>F.Paste
+<input type="checkbox" name="layers" value="B.Silkscreen" />B.Silkscreen
+<input type="checkbox" name="layers" value="F.Silkscreen" />F.Silkscreen
+<input type="checkbox" name="layers" value="B.Mask" />B.Mask
+<input type="checkbox" name="layers" value="F.Mask" />F.Mask
+<input type="checkbox" name="layers" value="User.Drawings" />User.Drawings
+<input type="checkbox" name="layers" value="User.Comments" />User.Comments
+<input type="checkbox" name="layers" value="User.Eco1" />User.Eco1
+<input type="checkbox" name="layers" value="User.Eco2" />User.Eco2
+<input type="checkbox" name="layers" value="Edge.Cuts" checked/>Edge.Cuts
+<input type="checkbox" name="layers" value="Margin" />Margin
+<input type="checkbox" name="layers" value="B.Courtyard" />B.Courtyard
+<input type="checkbox" name="layers" value="F.Courtyard" />F.Courtyard
+<input type="checkbox" name="layers" value="B.Fab" />B.Fab
+<input type="checkbox" name="layers" value="F.Fab" />F.Fab
       </td>
       <td>
         Download KiCad file or gerber directly.

@@ -10,16 +10,7 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./srv_node:/srv_dninja
-    networks:
-      - dninja
-
-  dninja_kicad:
-    image: kicad/kicad:nightly
-    container_name: dninja_kicad
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./srv_kicad:/srv_dninja
+      - ./srv:/srv_dninja
     networks:
       - dninja
 

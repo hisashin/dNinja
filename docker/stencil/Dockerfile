@@ -1,7 +1,11 @@
-FROM node:latest
+FROM debian:sid
 
 # Create app directory
 WORKDIR /usr/src/app
+
+RUN apt update
+RUN apt -y upgrade
+RUN apt -y install nodejs npm kicad
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
