@@ -18,7 +18,9 @@ Then open [http://localhost:8080](http://localhost:8080) in any browser.
 
 - [Dockerfile](https://github.com/hisashin/dNinja/tree/main/docker/stencil)
 - [Docker Hub](https://hub.docker.com/repository/docker/hisashin/dninja-stencil/general)
-- [First manufacturer at Taobao](https://item.taobao.com/item.htm?ut_sk=1.Ypc9H/XorhEDAAcwD2ch0vJQ_21380790_1688378392455.Copy.1&id=623970507381&sourceType=item&price=10&suid=78A0F7FA-8B75-4613-91A6-45D714BB23D1&shareUniqueId=22191376057&un=95ad93137a6878d305c56616cc6ca708&share_crt_v=1&un_site=0&spm=a2159r.13376460.0.0&sp_abtk=gray_1_code_simpleios2&tbSocialPopKey=shareItem&sp_tk=RlVsR2RIMDlaeXA%3D&cpp=1&shareurl=true&short_name=h.5auJpLK&bxsign=scdBWLpVMVIkbSnqAfW2rnKfa7dWPoU4KA8uJBywBg1I3cvMinjX_jB2T0bnRwm8NDQqp9G8_6ivEOpTFam0G2zFqATo92WRVCw4wXnaTxFa7QGoavL1j480Azp-p_RFSSW&tk=FUlGdH09Zyp&app=chrome)
+- [142x142 holes 50x50mm stencil data](https://hisa.dev/wp-content/uploads/2023/06/gerbers-230625-50x50mm.zip)
+- [20x20 holes 10x12mm stencil data](https://hisa.dev/wp-content/uploads/2023/06/gerbers-230625-10x12mm.zip)
+- [First manufacturer at Taobao: with -+0.01mm error, CNY1200=$170 per piece](https://item.taobao.com/item.htm?ut_sk=1.Ypc9H/XorhEDAAcwD2ch0vJQ_21380790_1688378392455.Copy.1&id=623970507381&sourceType=item&price=10&suid=78A0F7FA-8B75-4613-91A6-45D714BB23D1&shareUniqueId=22191376057&un=95ad93137a6878d305c56616cc6ca708&share_crt_v=1&un_site=0&spm=a2159r.13376460.0.0&sp_abtk=gray_1_code_simpleios2&tbSocialPopKey=shareItem&sp_tk=RlVsR2RIMDlaeXA%3D&cpp=1&shareurl=true&short_name=h.5auJpLK&bxsign=scdBWLpVMVIkbSnqAfW2rnKfa7dWPoU4KA8uJBywBg1I3cvMinjX_jB2T0bnRwm8NDQqp9G8_6ivEOpTFam0G2zFqATo92WRVCw4wXnaTxFa7QGoavL1j480Azp-p_RFSSW&tk=FUlGdH09Zyp&app=chrome)
 
 ## Deep learning droplet tracker
 
