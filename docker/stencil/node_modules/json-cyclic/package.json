@@ -1,0 +1,75 @@
+{
+  "name": "json-cyclic",
+  "description": "Small utility library to replace circular references in JavaScript with JSONPaths",
+  "version": "1.0.2",
+  "person": "John Flockton <hello@johnflockton.com>",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "npx microbundle",
+    "dev": "npx microbundle watch",
+    "format": "npx prettier --write \".//**/*.js\"",
+    "format:check": "npx prettier --check \"./src/**/*.js\"",
+    "lint": "npx eslint \"./src/**/*.js\"",
+    "test": "npx jest --coverage"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "John Flockton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thegreatercurve/json-cyclic/issues"
+  },
+  "homepage": "https://github.com/thegreatercurve/json-cyclic#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegreatercurve/json-cyclic.git"
+  },
+  "keywords": [
+    "JSON",
+    "circular JSON",
+    "circular references",
+    "cyclic JSON",
+    "cyclic references"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
+    "microbundle": "^0.12.3",
+    "prettier": "^2.0.5"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/!(index).js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}

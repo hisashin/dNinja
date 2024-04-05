@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-export function genKiCad(hx, hy, d, b, sq, rc, dx, dy) {
+export function genKiCad(hx, hy, d, b, sq, rc, paste, dx, dy) {
   console.log(`hx=${hx}, hy=${hy}, d=${d}, b=${b}, sq=${sq}, rc=${rc}, dx=${dx}, dy=${dy}`);
   let sqAll = sq ? sq.includes('all') : false;
   let sqCenter = sq ? sq.includes('center') : false;
@@ -27,7 +27,7 @@ export function genKiCad(hx, hy, d, b, sq, rc, dx, dy) {
       corner = i == 0 || i == hx -1 || j == 0 || j == hy - 1;
       rect = sqAll || (center && sqCenter) || (corner && sqCorner);
       if(center && rc)rotc = true;
-      values.push(addHole(xmin + i*bmm, ymin + j*bmm, d, rect, center && rc));
+      values.push(addHole(xmin + i*bmm, ymin + j*bmm, d, rect, center && rc, paste));
     }
   }
   values.push(addText(dx, dy, `N:${hx}x${hy} D:${d}mil B:${b}mil SQ:${Array.isArray(sq) ? sq.join(',') : sq}${rotc ? ' RotC' : ''}`));
@@ -53,7 +53,16 @@ const oc = o * Math.cos(rad);
 const os = o * Math.cos(rad);
 const mil = 39.3700787402;
 
-function addHole(x, y, d, rect, rotate) {
+/*
+  F.Paste example:
+  (gr_circle (center 150.405 103.095) (end 151.675 103.095)
+    (stroke (width 0.1) (type solid)) (fill solid) (layer "F.Paste") (tstamp cd7c72f7-a478-45b8-b565-a8e556ae5151))
+
+  Edge.Cuts example:
+  (gr_circle (center 150.405 106.905) (end 149.135 106.905)
+    (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts") (tstamp 46393a3e-688f-4460-96ab-33e6c16dc651))
+ */
+function addHole(x, y, d, rect, rotate, paste) {
   let r = d/(2*mil);
   let value = '';
   if(rect) {
@@ -72,7 +81,7 @@ function addHole(x, y, d, rect, rotate) {
   } else {
     value = `  (gr_circle (center ${x} ${y}) (end ${x-r} ${y})`
   }
-  value += `    (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts") (tstamp 87dbf45e-8178-4dd4-b1c0-bc349d2bfdf6))`;
+  value += `    (stroke (width ${paste ? '0.0' : '0.1'}) (type ${paste ? 'solid' : 'default'})) (fill ${paste ? 'solid' : 'none'}) (layer "${paste ? 'F.Paste' : 'Edge.Cuts'}") (tstamp 87dbf45e-8178-4dd4-b1c0-bc349d2bfdf6))`;
   return value;
 }
 function addText(dx, dy, str) {

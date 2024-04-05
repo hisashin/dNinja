@@ -3,6 +3,7 @@ import path from 'path';
 import * as fs from 'fs';
 import { genKiCad } from './lib/kicad.mjs'
 import { genGerber } from './lib/gerber.mjs'
+import { encycle, decycle } from 'json-cyclic'
 
 const PORT = 8080;
 const HOST = '0.0.0.0';
@@ -22,6 +23,7 @@ app.get('/download', (req, res) => {
   let b = req.query.b;
   let sq = req.query.sq;
   let rc = ('true' == req.query.rc);
+  let paste = ('true' == req.query.paste);
   let dx = req.query.dx;
   let dy = req.query.dy;
   let format = req.query.format;
@@ -29,7 +31,7 @@ app.get('/download', (req, res) => {
   if(sq && !Array.isArray(sq))sq = [ sq ];
   if(layers && !Array.isArray(layers))layers = [ layers ];
   console.log(`format=${format}, layers=${layers}`);
-  let data = genKiCad(hx, hy, d, b, sq, rc, dx, dy);
+  let data = genKiCad(hx, hy, d, b, sq, rc, paste, dx, dy);
   if('gerber' == format) {
     data = genGerber(data, layers);
   }

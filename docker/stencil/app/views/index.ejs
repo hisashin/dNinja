@@ -8,71 +8,123 @@
 <form action="./download" method="get">
   <table border="1">
     <tr>
-      <th>Nuber of holes</th>
-      <td width="500">
-        <input type="number" name="hx" value="5" />
-        x
-        <input type="number" name="hy" value="5" />
+      <th>
+        设置参数<br>
+        Setting Parameter
+      </th>
+      <th width="500">
+        设置值<br>
+        Setting Values
+      </th>
+      <th>
+        对钢网厂的评论<br>
+        Comment for stencil factory
+      </th>
+    </tr>
+    <tr>
+      <th>
+        孔的数量<br>
+        Number of holes
+      </th>
+      <td>
+        横向(horizontal)<input type="number" name="hx" value="142" />x<br>
+        纵向(vertical)<input type="number" name="hy" value="142" />
       </td>
       <td>
-        At least 20,000 holes are needed for production. 142x142=20164 or more.
+        至少需要20,000个孔 142x142=20164<br>
+        At least 20,000 holes are needed.
       </td>
     </tr>
     <tr>
-      <th>Diameter of hole (mil)</th>
+      <th>
+        孔的直径(mil)<br>
+        Diameter of hole
+      </th>
       <td>
-        <input type="number" name="d" step="0.01" value="100" />
+        <input type="number" name="d" step="0.01" value="1" />
       </td>
       <td>
-        1 mil is best for production.
-      </td>
-    </tr>
-    <tr>
-      <th>Distance between holes (mil)</th>
-      <td>
-        <input type="number" name="b" step="0.01" value="150" />
-      </td>
-      <td>
-        Smaller is better. What's your best?
+        1mil=1/1000inch=0.0254mm=25.4μm是最好的<br>
+        1 mil is best
       </td>
     </tr>
     <tr>
-      <th>Square hole</th>
+      <th>
+        孔之间的距离(mil)<br>
+        Distance between holes
+      </th>
       <td>
-        <input type="checkbox" name="sq" value="center" checked/>center<br>
-        <input type="checkbox" name="sq" value="corner" checked/>corner<br>
-        <input type="checkbox" name="sq" value="all" />all
+        <input type="number" name="b" step="0.01" value="10" />
       </td>
       <td>
+        就质量稳定而言，越小越好。 什么是你最好的？<br>
+        Smaller is better as far as stable quality. What's your best?
+      </td>
+    </tr>
+    <tr>
+      <th>
+        将孔的形状摆成方形<br>
+        Square the shape of the hole
+      </th>
+      <td>
+        <input type="checkbox" name="sq" value="center" checked/>中心(center)<br>
+        <input type="checkbox" name="sq" value="corner" checked/>角落(corner)<br>
+        <input type="checkbox" name="sq" value="all" />所有(all)
+      </td>
+      <td>
+        将洞的形状从圆形改为方形，以使其更容易被发现<br>
         Change the shape of the hole from a circle to a square to make it easier to be detected.
       </td>
     </tr>
     <tr>
-      <th>Rotate Center Square</th>
+      <th>
+        旋转中心广场<br>
+        Rotate Center Square
+      </th>
       <td>
         <input type="checkbox" name="rc" value="true" checked/>
       </td>
       <td>
-        Rotate the center square 45 degrees to distinguish it from the corner squares.
+       将中间的方块旋转45度，以区别于角落的方块<br>
+       Rotate the center square 45 degrees to distinguish it from the corner squares.
       </td>
     </tr>
     <tr>
-      <th>Stencil Dimension (mm)</th>
+      <th>
+        孔的KiCad层的名称<br>
+        Name of KiCad layer for holes
+      </th>
       <td>
-        <input type="number" name="dx" step="0.01" value="50" />
-        x
-        <input type="number" name="dy" step="0.01" value="50" />
+        <input type="radio" name="paste" value="true" checked/>F.Paste
+        <input type="radio" name="paste" value="false"/>Edge.Cut
       </td>
       <td>
-        Size of stencil.
+        哪一层是用于孔的<br>
+        Which layer is used for the holes.
       </td>
     </tr>
     <tr>
-      <th>Output format</th>
+      <th>
+        钢网的尺寸(mm)<br>
+        Dimension of stencil
+      </th>
       <td>
-        <input type="radio" name="format" value="kicad"/> KiCad<br>
-        <input type="radio" name="format" value="gerber" checked/> Gerber<br>
-&nbsp;
+        宽度(width)<input type="number" name="dx" step="0.01" value="50" />x<br>
+        垂直(height)<input type="number" name="dy" step="0.01" value="50" />
+      </td>
+      <td>
+        &nbsp;
+      </td>
+    </tr>
+    <tr>
+      <th>
+        输出格式<br>
+        Output format
+      </th>
+      <td>
+        <input type="radio" name="format" value="kicad"/>KiCad<br>
+        <input type="radio" name="format" value="gerber" checked/>KiCad+Gerber<br>
+层来生成gerber(layer to generate gerber)<br>
 <input type="checkbox" name="layers" value="F.Cu" />F.Cu
 <input type="checkbox" name="layers" value="B.Cu" />B.Cu
 <input type="checkbox" name="layers" value="B.Adhesive" />B.Adhesive
@@ -95,12 +147,13 @@
 <input type="checkbox" name="layers" value="F.Fab" />F.Fab
       </td>
       <td>
+        下载KiCad文件或gerber<br>
         Download KiCad file or gerber directly.
       </td>
     </tr>
     <tr>
       <td colspan="3">
-        <input type="submit" value="Generate" />
+        <input type="submit" value="生成(Generate)" />
       </td>
     </tr>
   </table>
